@@ -1,198 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranjith | Full Stack Developer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#FAFAFF" />
+    <meta
+      name="description"
+      content="Explore the portfolio of Ranjith M., a Computer Science student passionate about full-stack development, AI, and creative digital experiences."
+    />
 
-  <!-- STYLE -->
-  <link rel="stylesheet" href="style.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Ranjith M. | Creative Developer &amp; UI Enthusiast"
+    />
+    <meta
+      property="og:description"
+      content="Explore the portfolio of Ranjith M., a Computer Science student passionate about full-stack development, AI, and creative digital experiences."
+    />
 
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ranjith M. | Creative Developer &amp; UI Enthusiast"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore the portfolio of Ranjith M., a Computer Science student passionate about full-stack development, AI, and creative digital experiences."
+    />
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="hero-logo">RANJITH </div>
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#work">Projects</a>
-    <a href="#contact">Contact</a>
-
-    <button onclick="toggleMode()" class="mode-btn">🌙</button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="left">
-    <h1>Hi, I'm Ranjith 👋</h1>
-    <p id="typing" class="typing"></p>
-
-    <div class="hero-info">
-      <p>💻 Full Stack Developer</p>
-      <p>I build scalable, modern web applications.</p>
-      <p>Focused on clean UI & powerful backend.</p>
-    </div>
-
-    <div class="hero-buttons">
-      <button onclick="scrollToSection('work')">View My Work</button>
-    </div>
-
-    <!-- 🔥 SOCIAL ICONS ADDED HERE -->
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/ranjithm57/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/ranjithranvishnu57" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-
-  </div>
-
-  <div class="right">
-    <div class="profile-container">
-      <img src="profile.jpg.jpeg" alt="Ranjith">
-    </div>
-  </div>
-</section>
-
-
-<!-- ABOUT -->
-<section id="about" class="about">
-  <h2>About Me</h2>
-  <div class="about-grid">
-    <div class="about-card reveal">
-      <h3>👨‍💻 Developer</h3>
-      <p>I am a self-driven Full Stack Developer who enjoys building modern and responsive web applications. I have a strong foundation in HTML, CSS, JavaScript, and Node.js, and I focus on writing clean, efficient code while creating user-friendly interfaces.</p>
-    </div>
-    <div class="about-card reveal">
-      <h3>🚀 Passion</h3>
-      <p>I am passionate about learning new technologies and improving my development skills every day. I love turning ideas into real-world projects and exploring how technology can solve real problems in simple and effective ways.</p>
-    </div>
-    <div class="about-card reveal">
-      <h3>🎯 Goal</h3>
-      <p>My goal is to become a skilled software engineer and work on impactful projects that make a difference. I aim to continuously grow, contribute to real-world applications, and build innovative solutions in the tech industry..</p>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="about">
-  <h2>My Skills</h2>
-  <div class="about-grid">
-    <div class="about-card reveal">
-      <h3>Frontend</h3>
-      <p>HTML, CSS, JavaScript</p>
-    </div>
-    <div class="about-card reveal">
-      <h3>Backend</h3>
-      <p>Node.js, Express.js</p>
-    </div>
-    <div class="about-card reveal">
-      <h3>Tools</h3>
-      <p>Git, GitHub, VS Code</p>
-    </div>
-    <div class="about-card reveal">
-      <h3>Database</h3>
-      <p>MongoDB</p>
-    </div>
-    <div class="about-card reveal">
-      <h3>Others</h3>
-      <p>C, C++, Python</p>
-    </div>
-  </div>
-</section>
-<section id="certificates" class="about">
-  <h2>My Certificates</h2>
-
-  <div class="about-grid">
-
-    <div class="about-card reveal">
-      <h3>Google AI Essentials 🤖</h3>
-      <p>
-        Completed Google AI Essentials certification, gaining foundational knowledge in Artificial Intelligence, 
-        machine learning concepts, and practical AI tools for real-world applications.
-      </p>
-    </div>
-
-    <div class="about-card reveal">
-      <h3>Diploma in Computer Programming 💻</h3>
-      <p>
-        Successfully completed an offline diploma in computer programming covering core languages like 
-        C, C++, and Python with strong problem-solving and programming fundamentals.
-      </p>
-    </div>
-
-  </div>
-</section>
-</section>
-
-
-<!-- PROJECTS -->
-<section id="work" class="work">
-
-  <h2>My Projects</h2>
-
-  
-    <div class="timeline-item">
-      <h3>MCQ Test App ✅</h3>
-      <p>Interactive MCQ app with scoring system.</p>
-      <p><strong>Tech:</strong> HTML, CSS, JS, Node.js</p>
-      <div class="project-links">
-        <a href="https://github.com/ranjithranvishnu57-glitch/QuizApp" target="_blank">GitHub</a>
-        <a href="https://quizapp-tiqu.onrender.com/" target="_blank">Live Demo</a>
-      </div>
-    </div>
-
-     <div class="timeline-item">
-      <h3>Portfolio ✅</h3>
-      <p>Interactive portfolio website showcasing my work and skills.</p>
-      <p><strong>Tech:</strong> HTML, CSS, JS, Nodejs</p>
-      <div class="project-links">
-        <a href="https://github.com/ranjithranvishnu57-glitch/FUTURE_FS_1" target="_blank">GitHub</a>
-        <a href="https://ranjithranvishnu57-glitch.github.io/FUTURE_FS_1/" target="_blank">Live Demo</a>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-    
-
-      <h3>Mini CRM ✅</h3>
-      <p>A simple customer relationship management app for small businesses.</p>
-      <p><strong>Tech:</strong> HTML, CSS, JS, Node.js, Express.js, MongoDB</p>
-      <div class="project-links">
-        <a href="https://github.com/ranjithranvishnu57-glitch/FUTURE_FS_2" target="_blank">GitHub</a>
-        <a href="https://future-fs-2-w5sz.onrender.com/login.html" target="_blank">Live Demo</a>
-      </div>
-    
-    </div>
-
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
-  <form id="contactForm" class="contact-box reveal">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<!-- FOOTER -->
-<footer class="fott">
-  <p>© 2026 Ranjith | Full Stack Developer</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Ranjith M. | Creative Developer &amp; UI Enthusiast</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
