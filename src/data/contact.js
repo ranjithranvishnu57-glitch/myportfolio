@@ -13,9 +13,9 @@ export const CONTACT_INFO = {
     {
       id: 'email',
       label: 'Email',
-      value: 'ranjithmuneeswaran0507@gmail.com',
-      placeholder: 'ranjithmuneeswaran0507@gmail.com',
-      href: 'mailto:ranjithmuneeswaran0507@gmail.com',
+      value: 'ranjithranvishnu57@gmail.com',
+      placeholder: 'ranjithranvishnu57@gmail.com',
+      href: 'mailto:ranjithranvishnu57@gmail.com',
     },
     {
       id: 'phone',

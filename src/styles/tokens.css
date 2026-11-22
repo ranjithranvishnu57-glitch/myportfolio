@@ -41,3 +41,32 @@
   --transition-base: 200ms cubic-bezier(0.22, 1, 0.36, 1);
   --transition-smooth: 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* ==========================================================================
+   Dark Theme Overrides
+   ========================================================================== */
+
+html.dark {
+  /* Core Palette */
+  --color-bg-primary: #0F0E17;
+  --color-bg-secondary: #171526;
+  --color-surface-card: #1C1A2E;
+  --color-text-primary: #FFFFFE;
+  --color-text-secondary: #A7A5C0;
+  --color-accent-primary: #A78BFA;
+  --color-accent-secondary: #8B5CF6;
+  --color-border: #2A2742;
+
+  /* Borders & Glassmorphism */
+  --color-border-subtle: #2A2742;
+  --color-border-accent: rgba(167, 139, 250, 0.35);
+  --color-glass-bg: rgba(28, 26, 46, 0.85);
+  --color-glass-border: rgba(42, 39, 66, 0.9);
+
+  /* Elevation & Shadows */
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4),
+    0 2px 8px -2px rgba(139, 92, 246, 0.15);
+  --shadow-elevated: 0 12px 32px -6px rgba(0, 0, 0, 0.6),
+    0 4px 14px -4px rgba(139, 92, 246, 0.25);
+  --shadow-glow: 0 8px 28px -4px rgba(167, 139, 250, 0.35);
+}

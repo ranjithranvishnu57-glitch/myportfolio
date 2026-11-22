@@ -1,17 +1,41 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowUpRight, Menu, X } from 'lucide-react'
+import { ArrowUpRight, Download, Menu, Moon, Sun, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { NAV_LINKS } from '../../data/navigation'
 import Button from '../ui/Button'
 
 /**
  * Sticky responsive navigation bar with "RM" monogram logo,
- * center section links with active indicator, and "Let's Talk" CTA.
+ * center section links with active indicator, "Download Resume",
+ * "Let's Talk" CTA, and rotating sunlight/moon theme toggle.
  */
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('theme')
+      if (saved) return saved === 'dark'
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+    return false
+  })
+
+  useEffect(() => {
+    const root = document.documentElement
+    if (isDark) {
+      root.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      root.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [isDark])
+
+  const toggleTheme = () => {
+    setIsDark((prev) => !prev)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -131,9 +155,24 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* RIGHT: CTA + Mobile Menu Toggle */}
-          <div className="flex items-center gap-2.5">
-            <div className="hidden md:block">
+          {/* RIGHT: Resume Button + CTA + Rotating Sunlight/Moon Theme Toggle + Mobile Menu Toggle */}
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            <div className="hidden lg:block">
+              <Button
+                href="/Ranjith_M_Resume.pdf"
+                download="Ranjith_M_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                size="sm"
+                icon={Download}
+                iconPosition="left"
+              >
+                Download Resume
+              </Button>
+            </div>
+
+            <div className="hidden sm:block">
               <Button
                 href="#contact"
                 onClick={(e) => scrollToSection(e, 'contact')}
@@ -143,6 +182,29 @@ export default function Navbar() {
                 Let&apos;s Talk
               </Button>
             </div>
+
+            {/* Rotating Sunlight / Moon Theme Toggle */}
+            <motion.button
+              type="button"
+              onClick={toggleTheme}
+              whileTap={{ scale: 0.9 }}
+              aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-card text-text-primary shadow-soft transition-colors hover:border-accent-secondary hover:text-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/40 cursor-pointer"
+            >
+              <motion.div
+                key={isDark ? 'dark' : 'light'}
+                initial={{ rotate: -90, opacity: 0, scale: 0.7 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: 90, opacity: 0, scale: 0.7 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+              >
+                {isDark ? (
+                  <Moon className="h-4.5 w-4.5 text-accent-primary" aria-hidden="true" />
+                ) : (
+                  <Sun className="h-4.5 w-4.5 text-amber-500" aria-hidden="true" />
+                )}
+              </motion.div>
+            </motion.button>
 
             <button
               type="button"
@@ -202,7 +264,19 @@ export default function Navbar() {
                 )
               })}
 
-              <div className="mt-3 pt-3 border-t border-border">
+              <div className="mt-3 flex flex-col gap-2.5 pt-3 border-t border-border">
+                <Button
+                  href="/Ranjith_M_Resume.pdf"
+                  download="Ranjith_M_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="secondary"
+                  className="w-full"
+                  icon={Download}
+                  iconPosition="left"
+                >
+                  Download Resume
+                </Button>
                 <Button
                   href="#contact"
                   onClick={(e) => scrollToSection(e, 'contact')}
